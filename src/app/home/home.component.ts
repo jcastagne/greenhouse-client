@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('https://gh-api.azurewebsites.net/api/values')
+    this.http.get('gh-api.azurewebsites.net/api/values')
     .subscribe((data:string[]) => this.values = data);
   }
 
