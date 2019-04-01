@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.http.get('gh-api.azurewebsites.net/api/values')
-    .subscribe((data:string[]) => this.values = data);
+    .subscribe((data: string[]) => this.values = data);
   }
 
 
