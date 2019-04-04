@@ -24,6 +24,7 @@
             ],
             "styles": [
               "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -132,5 +133,10 @@
       }
     }
   },
-  "defaultProject": "gh-client"
+  "defaultProject": "gh-client",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
