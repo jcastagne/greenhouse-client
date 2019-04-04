@@ -1,19 +1,14 @@
-<p>
-  plant-list works!
-</p>
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Common Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let plant of plants">
-        <td>{{plant.id}}</td>
-        <td>{{plant.commonName}}</td>
-      </tr>
-    </tbody>
+  <div class="col-md-12 d-flex">
+  <table mat-table mat-sort [dataSource]="plants" class="p-2 flex-grow-1">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> id </th>
+      <td mat-cell *matCellDef="let plant"> {{plant.id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="commonName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> commonName </th>
+      <td mat-cell *matCellDef="let plant"> {{plant.commonName}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="tableColumnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let plant; columns: tableColumnsToDisplay;"></tr>
   </table>
 </div>

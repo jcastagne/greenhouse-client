@@ -9,11 +9,15 @@ import { IPlant } from '../plant';
 })
 export class PlantListComponent implements OnInit {
 
+  tableColumnsToDisplay: string[];
   plants: IPlant[] = [];
-  constructor(private plantService: PlantService) { }
+  constructor(private plantService: PlantService) {
+    this.tableColumnsToDisplay = ['id', 'commonName'];
+  }
 
   ngOnInit() {
     this.plants = this.plantService.getPlants();
+    console.info(this.plants);
   }
 
 }
