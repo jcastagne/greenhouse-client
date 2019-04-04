@@ -3,9 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'gh-home',
+  templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
   values: string[];
@@ -13,8 +12,8 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('https://gh-api.azurewebsites.net/api/values')
-    .subscribe((data: string[]) => this.values = data);
+    // this.http.get('https://gh-api.azurewebsites.net/api/values')
+    // .subscribe((data: string[]) => this.values = data);
   }
 
 
