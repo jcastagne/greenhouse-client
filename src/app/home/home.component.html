@@ -1,12 +1,40 @@
 <p>
-  home works in V4!
+  Welcome to GreenHouse Application!
 </p>
-<p>
-  Testing api
-</p>
-<li *ngFor="let value of values; index as i">
-  {{i}} / {{value}}
-</li>
-<p>
-  Testing protected push to Master 2
-</p>
+
+<div class="container">
+  <div>
+    <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+      <mat-label>Name</mat-label>
+      <input type="text" matInput placeholder="Enter your name">
+    </mat-form-field>
+  </div>
+  <div><button mat-raised-button color="primary">Test</button></div>
+</div>
+
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav [mode]="mode.value">
+    <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+    <p>
+      <mat-radio-group class="example-radio-group" [formControl]="mode">
+        <label>Mode:</label>
+        <mat-radio-button value="over">Over</mat-radio-button>
+        <mat-radio-button value="side">Side</mat-radio-button>
+        <mat-radio-button value="push">Push</mat-radio-button>
+      </mat-radio-group>
+    </p>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+    <p>
+      <mat-radio-group class="example-radio-group" [formControl]="mode">
+        <label>Mode:</label>
+        <mat-radio-button value="over">Over</mat-radio-button>
+        <mat-radio-button value="side">Side</mat-radio-button>
+        <mat-radio-button value="push">Push</mat-radio-button>
+      </mat-radio-group>
+    </p>
+  </mat-sidenav-content>
+</mat-sidenav-container>

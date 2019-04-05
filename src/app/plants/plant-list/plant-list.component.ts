@@ -16,8 +16,8 @@ export class PlantListComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Get Hard-coded calues from service waiting to get them from API
     this.plants = this.plantService.getPlants();
-    console.info(this.plants);
   }
 
 }

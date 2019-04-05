@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
-import {MatTableModule} from '@angular/material';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { MaterialModule } from './material/material.module';
+
+
 
 
 @NgModule({
   declarations: [],
-  imports: [MatTableModule],
+  imports: [MaterialModule],
   exports: [
-    MatTableModule,
+    CommonModule,
     FormsModule,
-    BrowserAnimationsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
 })
