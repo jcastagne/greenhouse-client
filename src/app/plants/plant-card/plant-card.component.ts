@@ -11,9 +11,11 @@ import { Plant } from '../plant';
 export class PlantCardComponent implements OnInit {
 
   @Input() plant: Plant;
+  defaultImgSource: string = '../assets/images/plant-default.jpg';
   constructor() { }
 
   ngOnInit() {
+    this.plant.imgSource = this.plant.imgSource || this.defaultImgSource;
   }
 
 }

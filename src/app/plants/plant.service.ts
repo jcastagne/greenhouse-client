@@ -21,7 +21,7 @@ export class PlantService {
       {
         id: 3,
         commonName: 'Abricotier',
-        imgSource: ''
+        imgSource: null
       },
       {
         id: 4,
@@ -30,4 +30,4 @@ export class PlantService {
       }
     ];
   }
- }
+}

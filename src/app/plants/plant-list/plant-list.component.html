@@ -18,7 +18,13 @@
     <tr mat-row *matRowDef="let plant; columns: tableColumnsToDisplay;"></tr>
   </table>
 </div>
-
-<div *ngFor="let filteredPlant of filteredPlants; index as i">
+<br>
+<!-- <div *ngFor="let filteredPlant of filteredPlants; index as i">
   <gh-plant-card [plant]="filteredPlant"></gh-plant-card>
+</div> -->
+
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="1%" fxLayoutAlign="center">
+  <div *ngFor="let filteredPlant of filteredPlants; index as i">
+    <gh-plant-card fxFlex="100%" [plant]="filteredPlant"></gh-plant-card>
+  </div>
 </div>
