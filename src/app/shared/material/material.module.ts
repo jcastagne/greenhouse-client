@@ -5,7 +5,7 @@ import {
   // MatBottomSheetModule,
   MatButtonModule,
   MatButtonToggleModule,
-  // MatCardModule,
+  MatCardModule,
   // MatCheckboxModule,
   // MatChipsModule,
   // MatDatepickerModule,
@@ -42,6 +42,7 @@ import {
   exports: [
     MatButtonModule,
     MatButtonToggleModule,
+    MatCardModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
