@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 
 import { PlantListComponent } from './plant-list/plant-list.component';
+import { PlantCardComponent } from './plant-card/plant-card.component';
 
 @NgModule({
   declarations: [
-    PlantListComponent
+    PlantListComponent,
+    PlantCardComponent
   ],
   imports: [
-    CommonModule,
     SharedModule
   ],
   exports: []

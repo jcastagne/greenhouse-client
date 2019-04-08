@@ -1,28 +1,32 @@
 import { Injectable } from '@angular/core';
 
-import { IPlant } from './plant';
+import { Plant } from './plant';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlantService {
-  getPlants(): IPlant[] {
+  getPlants(): Plant[] {
     return [
       {
         id: 1,
-        commonName: 'Lavandier'
+        commonName: 'Lavande',
+        imgSource: '../assets/images/lavande.jpg'
       },
       {
         id: 2,
-        commonName: 'Rosier'
+        commonName: 'Rosier',
+        imgSource: '../assets/images/rosier.jpg'
       },
       {
         id: 3,
-        commonName: 'Abricotier'
+        commonName: 'Abricotier',
+        imgSource: ''
       },
       {
         id: 4,
-        commonName: 'Oranger'
+        commonName: 'Oranger',
+        imgSource: '../assets/images/oranger.jpg'
       }
     ];
   }
