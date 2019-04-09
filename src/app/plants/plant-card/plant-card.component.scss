@@ -1,3 +1,23 @@
 mat-card {
-    max-width: 270px;
+  width: 100%;
+  min-width: 170px;
+}
+.gh-fade {
+  position: relative;
+  height: 4.3em; /* exactly three lines with 1 extra px */
+}
+.gh-fade:after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  height: 1.5em;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #424242 65%);
+}
+
+.module {
+  overflow: hidden;
+  margin: 0 0 1em 0;
 }
