@@ -55,7 +55,7 @@ export class PlantService {
       },
       {
         id: 10,
-        commonName: 'Cerisier',
+        commonName: 'Platane',
         imgSource: null
       },
       {

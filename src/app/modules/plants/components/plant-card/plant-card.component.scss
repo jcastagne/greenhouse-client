@@ -11,10 +11,10 @@ mat-card {
   text-align: right;
   position: absolute;
   bottom: 0;
-  right: 0;
-  width: 80%;
+  right: -5px;
+  width: 70%;
   height: 1.5em;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), #424242 65%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #424242 80%);
 }
 
 .module {

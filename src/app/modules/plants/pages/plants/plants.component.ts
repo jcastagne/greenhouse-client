@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { PlantService } from '../plant.service';
-import { Plant } from '../plant';
+import { PlantService } from '../../shared/plant.service';
+import { Plant } from '../../shared/plant';
 
 @Component({
-  selector: 'gh-plant-list',
-  templateUrl: './plant-list.component.html'
+  templateUrl: './plants.component.html'
 })
-export class PlantListComponent implements OnInit {
+export class PlantsComponent implements OnInit {
 
   tableColumnsToDisplay: string[];
   plants: Plant[] = [];

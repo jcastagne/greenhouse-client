@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 
-import { Plant } from '../plant';
+import { Plant } from '../../shared/plant';
 
 @Component({
   selector: 'gh-plant-card',
@@ -11,7 +11,7 @@ import { Plant } from '../plant';
 export class PlantCardComponent implements OnInit {
 
   @Input() plant: Plant;
-  defaultImgSource: string = '../assets/images/plant-default.jpg';
+  defaultImgSource = '../assets/images/plant-default.jpg';
   constructor() { }
 
   ngOnInit() {

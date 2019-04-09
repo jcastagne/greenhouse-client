@@ -4,19 +4,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 
-import { HomeComponent } from './home/home.component';
-import { PlantModule } from './plants/plant.module';
-import { SharedModule } from './shared/shared.module';
+import { PlantModule } from './modules/plants/plant.module';
 import { CoreModule } from './core/core.module';
+import { HomeModule } from './modules/home/home.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     PlantModule,
-    CoreModule
+    CoreModule,
+    HomeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

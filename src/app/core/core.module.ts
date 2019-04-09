@@ -9,8 +9,8 @@ import { LayoutModule } from '@angular/cdk/layout';
 
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
-import { NavMenuComponent } from './navigation/nav-menu/nav-menu.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { NavMenuComponent } from './navigation/components/nav-menu/nav-menu.component';
 
 
 @NgModule({
@@ -31,8 +31,7 @@ import { AppRoutingModule } from '../app-routing.module';
   ],
   exports: [
     NavMenuComponent,
-    HttpClientModule,
-    AppRoutingModule
+    HttpClientModule
   ]
 })
 export class CoreModule { }

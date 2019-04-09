@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-title>
+    <span fxFlex="100%">{{plant.commonName}}</span>
+  </mat-card-title>
+  <img mat-card-image
+         [src]='plant.imgSource'>
+  <mat-card-content>
+      <div class='module gh-fade'>
+      <p gh-caption>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem animi amet recusandae itaque,
+        reprehenderit
+        ipsum
+          illum eaque sint dolorum sequi. Tenetur incidunt similique minima deleniti maiores repudiandae beatae
+          aspernatur
+        provident.</p>
+    </div>
+  </mat-card-content>
+  <mat-card-footer>
+      <mat-chip-list>
+          <mat-chip  selected selectable="false">One fish</mat-chip>
+          <mat-chip  selected selectable="false">Two fish</mat-chip>
+          <mat-chip  selected selectable="false">Primary fish</mat-chip>
+          <mat-chip  selected selectable="false">Accent fish</mat-chip>
+        </mat-chip-list>
+    </mat-card-footer>
+</mat-card>
