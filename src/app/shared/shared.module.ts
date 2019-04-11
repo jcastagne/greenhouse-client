@@ -18,7 +18,7 @@ import { MaterialModule } from './material/material.module';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
 })
