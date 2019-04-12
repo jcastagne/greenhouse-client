@@ -1,9 +1,8 @@
 <div class="container">
   <div fxFlexFill
-       fxLayout="row wrap"
+       fxLayout="column"
        display="flex"
-       fxLayout.xs="column"
-       fxLayoutAlign="center">
+       fxLayoutAlign="space-around center">
     <mat-form-field>
       <input matInput
              placeholder="Filtre"
@@ -18,6 +17,10 @@
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
+    <mat-chip-list multiple="true"
+                   (change)="onChangeSelectedTagFilter($event)">
+      <mat-chip *ngFor="let tag of primaryTags">{{tag.value}}</mat-chip>
+    </mat-chip-list>
   </div>
 
   <mat-divider></mat-divider>

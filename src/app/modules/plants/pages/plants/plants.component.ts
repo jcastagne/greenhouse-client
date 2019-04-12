@@ -12,26 +12,46 @@ import { PlantDialogComponent } from '../../components/plant-dialog/plant-dialog
   templateUrl: './plants.component.html'
 })
 export class PlantsComponent implements OnInit {
-
+  //#region bound variables
   tableColumnsToDisplay: string[];
   plants: Plant[] = [];
   filteredPlants: Plant[] = [];
   primaryTags: Tag[];
   tags: Tag[];
 
-  _listFilter: string;
+  private pListFilter: string;
   get listFilter(): string {
-    return this._listFilter;
+    return this.pListFilter;
   }
   set listFilter(value: string) {
-    this._listFilter = value;
-    this.filteredPlants = this.listFilter ? this.performFilter(this.listFilter) : this.plants;
+    // Once linked to the API, should consider using a Search button for performance
+    this.pListFilter = value;
+    this.filteredPlants = this.listFilter ? this.performFilter() : this.plants;
   }
 
-  performFilter(filterBy: string): Plant[] {
-    filterBy = filterBy.toLocaleLowerCase();
+  private ptagFilter: string[];
+  get tagFilter(): string[] {
+    return this.ptagFilter;
+  }
+  set tagFilter(value: string[]) {
+    // Once linked to the API, should consider using a Search button for performance
+    this.ptagFilter = value;
+    this.filteredPlants = this.performFilter();
+  }
+  //#endregion
+
+
+  //#region bound methods
+
+  performFilter(): Plant[] {
+    // Filter by commonName
+    const filterBy = this.listFilter.toLocaleLowerCase();
     return this.plants.filter((plant: Plant) =>
-      plant.commonName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+      // Filter by CommonName
+      plant.commonName.toLocaleLowerCase().indexOf(filterBy) !== -1
+      &&
+      // Filter by tags
+      this.arrayContains(plant.tags.map(tag => tag.value), this.tagFilter));
   }
 
   openDetailsDialog(plantId: number): void {
@@ -55,6 +75,14 @@ export class PlantsComponent implements OnInit {
 
   }
 
+  onChangeSelectedTagFilter(value): void {
+    this.tagFilter = value.value;
+  }
+  //#endregion
+
+
+  //#region Init
+
   // Constructor
   constructor(
     private plantService: PlantService,
@@ -70,6 +98,22 @@ export class PlantsComponent implements OnInit {
     this.listFilter = '';
     this.tags = this.tagService.getTags();
     this.primaryTags = this.tagService.getPrimaryTags();
+    this.tagFilter = [];
   }
+  //#endregion
+
+
+  //#region  private methods
+
+  arrayContains(array, filterArray): boolean {
+    for (let element of filterArray) {
+      if (array.indexOf(element) === -1) {
+        // Returns false as soon as an element filterArray is not in array
+        return false;
+      }
+    }
+    return true;
+  }
+  //#endregion
 
 }
