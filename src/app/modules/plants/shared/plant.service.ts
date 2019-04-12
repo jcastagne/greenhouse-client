@@ -6,7 +6,7 @@ import { Plant } from './plant';
   providedIn: 'root'
 })
 export class PlantService {
-  defaultImgSource = '../assets/images/plant-default.jpg';
+  defaultImgSource = 'https://picsum.photos/300/200/?random';
   demoPlants: Plant[] =
     [
       {
@@ -29,7 +29,8 @@ export class PlantService {
             value: 'Violet',
             primary: false
           },
-        ]
+        ],
+        favorite: true
       },
       {
         id: 2,
@@ -51,7 +52,8 @@ export class PlantService {
             value: 'Décoratif',
             primary: true
           }
-        ]
+        ],
+        favorite: true
       },
       {
         id: 3,
@@ -63,7 +65,8 @@ export class PlantService {
             value: 'Comestible',
             primary: true
           }
-        ]
+        ],
+        favorite: false
       },
       {
         id: 4,
@@ -75,7 +78,8 @@ export class PlantService {
             value: 'Comestible',
             primary: true
           }
-        ]
+        ],
+        favorite: false
       },
       {
         id: 5,
@@ -87,7 +91,8 @@ export class PlantService {
             value: 'Comestible',
             primary: true
           }
-        ]
+        ],
+        favorite: false
       },
       {
         id: 6,
@@ -99,7 +104,8 @@ export class PlantService {
             value: 'Comestible',
             primary: true
           }
-        ]
+        ],
+        favorite: true
       },
       {
         id: 7,
@@ -111,7 +117,8 @@ export class PlantService {
             value: 'Comestible',
             primary: true
           }
-        ]
+        ],
+        favorite: false
       },
       {
         id: 8,
@@ -123,7 +130,8 @@ export class PlantService {
             value: 'Comestible',
             primary: true
           }
-        ]
+        ],
+        favorite: false
       },
       {
         id: 9,
@@ -140,7 +148,8 @@ export class PlantService {
             value: 'Décoratif',
             primary: true
           }
-        ]
+        ],
+        favorite: false
       },
       {
         id: 10,
@@ -152,7 +161,8 @@ export class PlantService {
             value: 'Décoratif',
             primary: true
           }
-        ]
+        ],
+        favorite: true
       },
       {
         id: 11,
@@ -164,7 +174,8 @@ export class PlantService {
             value: 'Décoratif',
             primary: true
           }
-        ]
+        ],
+        favorite: true
       },
       {
         id: 12,
@@ -181,7 +192,8 @@ export class PlantService {
             value: 'Décoratif',
             primary: true
           }
-        ]
+        ],
+        favorite: false
       },
       {
         id: 13,
@@ -203,7 +215,8 @@ export class PlantService {
             value: 'Herbe',
             primary: false
           },
-        ]
+        ],
+        favorite: false
       },
     ];
   getPlants(): Plant[] {
@@ -211,5 +224,9 @@ export class PlantService {
       plant.imgSource = plant.imgSource || this.defaultImgSource;
     });
     return this.demoPlants;
+  }
+
+  getPlant(id): Plant {
+    return this.demoPlants.find(plant => plant.id === id);
   }
 }

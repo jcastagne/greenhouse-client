@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import {
   // MatAutocompleteModule,
   // MatBadgeModule,
@@ -9,8 +9,8 @@ import {
   // MatCheckboxModule,
   MatChipsModule,
   // MatDatepickerModule,
-  // MatDialogModule,
-  // MatDividerModule,
+  MatDialogModule,
+  MatDividerModule,
   // MatExpansionModule,
   MatFormFieldModule,
   // MatGridListModule,
@@ -44,6 +44,8 @@ import {
     MatButtonToggleModule,
     MatCardModule,
     MatChipsModule,
+    MatDialogModule,
+    MatDividerModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,

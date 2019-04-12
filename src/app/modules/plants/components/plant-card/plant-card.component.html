@@ -1,6 +1,11 @@
 <mat-card>
   <mat-card-title>
     <span fxFlex="100%">{{plant.commonName}}</span>
+    <mat-icon (click)="clickFavorite()"
+              style="cursor:pointer"
+              [color]="plant.favorite? 'primary' : ''">favorite</mat-icon>
+    <mat-icon (click)="clickDetails()"
+              style="cursor:pointer">remove_red_eye</mat-icon>
   </mat-card-title>
   <img mat-card-image
        [src]="plant.imgSource">

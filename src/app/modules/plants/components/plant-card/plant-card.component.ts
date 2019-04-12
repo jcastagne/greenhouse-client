@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { isUndefined } from 'util';
 
@@ -15,9 +15,25 @@ export class PlantCardComponent implements OnInit {
 
   @Input() plant: Plant;
   @Input() primaryTags: Tag[];
+
+  @Output()
+  favoriteClicked: EventEmitter<number> = new EventEmitter<number>();
+
+  @Output()
+  detailsClicked: EventEmitter<number> = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  clickDetails(): void {
+    this.detailsClicked.emit(this.plant.id);
+  }
+
+  clickFavorite(): void {
+    // this.plant.favorite =! this.plant.favorite;
+    this.favoriteClicked.emit(this.plant.id);
   }
 
   isPrimaryTagSelected(tagId: number): boolean {
