@@ -17,9 +17,11 @@
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
-    <mat-chip-list multiple="true"
+    <mat-chip-list [multiple]="true"
                    (change)="onChangeSelectedTagFilter($event)">
-      <mat-chip *ngFor="let tag of primaryTags">{{tag.value}}</mat-chip>
+      <mat-chip *ngFor="let tag of primaryTags"
+                #chip="matChip"
+                (click)="chip.toggleSelected(); onTagFilterClicked(chip)">{{tag.value}}</mat-chip>
     </mat-chip-list>
   </div>
 
@@ -39,9 +41,8 @@
                    fxFlex.xs="100%"
                    [plant]="filteredPlant"
                    [primaryTags]="primaryTags"
-                   (detailsClicked)="openDetailsDialog($event)"
-                   (favoriteClicked)="onFavoriteClicked($event)"
-                   class="test">
+                   (detailsClicked)="onDetailsClicked($event)"
+                   (favoriteClicked)="onFavoriteClicked($event)">
     </gh-plant-card>
   </div>
 </div>
