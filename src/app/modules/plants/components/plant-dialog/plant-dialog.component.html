@@ -2,6 +2,7 @@
 
 <mat-chip-list>
   <mat-chip *ngFor="let tag of plant.tags"
-            selected="false"
-            selectable="false">{{tag.value}}</mat-chip>
+            [selected]="false"
+            [disableRipple]="true"
+            [selectable]="false">{{tag.value}}</mat-chip>
 </mat-chip-list>

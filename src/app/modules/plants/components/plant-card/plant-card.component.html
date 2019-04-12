@@ -3,7 +3,7 @@
     <span fxFlex="100%">{{plant.commonName}}</span>
     <mat-icon (click)="clickFavorite()"
               style="cursor:pointer"
-              [color]="plant.favorite? 'primary' : ''">favorite</mat-icon>
+              [color]="plant.favorite? 'accent' : ''">favorite</mat-icon>
     <mat-icon (click)="clickDetails()"
               style="cursor:pointer">remove_red_eye</mat-icon>
   </mat-card-title>
@@ -21,9 +21,16 @@
   </mat-card-content>
   <mat-card-footer>
     <mat-chip-list>
-      <mat-chip *ngFor="let tag of primaryTags"
-                selected="{{isPrimaryTagSelected(tag.id)}}"
-                selectable="false">{{tag.value}}</mat-chip>
+      <div class="container"
+           fxFlexFill
+           display="flex"
+           fxLayoutAlign="center">
+        <mat-chip *ngFor="let tag of primaryTags"
+                  class="card-chip"
+                  fxGrow="1"
+                  selected="{{isPrimaryTagSelected(tag.id)}}"
+                  selectable="false">{{tag.value}}</mat-chip>
+      </div>
     </mat-chip-list>
   </mat-card-footer>
 </mat-card>

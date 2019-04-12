@@ -10,10 +10,31 @@
   right: -5px;
   width: 70%;
   height: 1.5em;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), #424242 80%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #FFFF 80%);
 }
 
 .module {
   overflow: hidden;
   margin: 0 0 1em 0;
 }
+
+.container {
+  width:600px !important;
+}
+
+.card-chip {
+  flex-grow: 1;
+  position: relative;
+  transition: all 300ms ease-in-out;
+  width:100% !important;
+
+  &:hover {
+    flex-grow: 4;
+  }// hover
+
+  &:before {
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }// before
+
+}// item

@@ -24,6 +24,11 @@ export class TagService {
       primary: true
     },
     {
+      id: 6,
+      value: 'Permanent',
+      primary: true
+    },
+    {
       id: 4,
       value: 'Violet',
       primary: false

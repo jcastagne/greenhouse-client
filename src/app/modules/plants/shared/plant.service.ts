@@ -6,7 +6,7 @@ import { Plant } from './plant';
   providedIn: 'root'
 })
 export class PlantService {
-  defaultImgSource = 'https://picsum.photos/300/200/?random';
+  defaultImgSource = 'https://picsum.photos/400/300/?random';
   demoPlants: Plant[] =
     [
       {
@@ -217,6 +217,29 @@ export class PlantService {
           },
         ],
         favorite: false
+      },
+      {
+        id: 1,
+        commonName: 'Pin',
+        imgSource: '../assets/images/pin.jpg',
+        tags: [
+          {
+            id: 2,
+            value: 'Médicinal',
+            primary: true
+          },
+          {
+            id: 3,
+            value: 'Décoratif',
+            primary: true
+          },
+          {
+            id: 6,
+            value: 'Permanent',
+            primary: true
+          },
+        ],
+        favorite: true
       },
     ];
   getPlants(): Plant[] {
