@@ -22,14 +22,15 @@
   <mat-card-footer>
     <mat-chip-list>
       <div class="container"
-           fxFlexFill
            display="flex"
            fxLayoutAlign="center">
         <mat-chip *ngFor="let tag of primaryTags"
                   class="card-chip"
                   fxGrow="1"
-                  selected="{{isPrimaryTagSelected(tag.id)}}"
-                  selectable="false">{{tag.value}}</mat-chip>
+                  [selected]="isPrimaryTagSelected(tag.id)"
+                  [selectable]="false">
+          <span class="text-truncate">{{tag.value}}</span>
+        </mat-chip>
       </div>
     </mat-chip-list>
   </mat-card-footer>
