@@ -1,49 +1,45 @@
-<div class="container">
-  <div fxFlexFill
-       fxLayout="column"
-       display="flex"
-       fxLayoutAlign="space-around center">
-    <mat-form-field>
-      <input matInput
-             placeholder="Filtre"
-             [(ngModel)]="listFilter"
-             type="text">
-      <button mat-button
-              *ngIf="listFilter"
-              matSuffix
-              mat-icon-button
-              aria-label="Clear"
-              (click)="listFilter=''">
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field>
-    <mat-chip-list [multiple]="true"
-                   (change)="onChangeSelectedTagFilter($event)">
-      <mat-chip *ngFor="let tag of primaryTags"
-                #chip="matChip"
-                (click)="chip.toggleSelected(); onTagFilterClicked(chip)">{{tag.value}}</mat-chip>
-    </mat-chip-list>
-  </div>
+<div fxLayout="column"
+     display="flex"
+     fxLayoutAlign="space-around center">
+  <mat-form-field>
+    <input matInput
+           placeholder="Filtre"
+           [(ngModel)]="listFilter"
+           type="text">
+    <button mat-button
+            *ngIf="listFilter"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="listFilter=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <mat-chip-list [multiple]="true"
+                 (change)="onChangeSelectedTagFilter($event)">
+    <mat-chip *ngFor="let tag of primaryTags"
+              #chip="matChip"
+              (click)="chip.toggleSelected(); onTagFilterClicked(chip)">{{tag.value}}</mat-chip>
+  </mat-chip-list>
+</div>
 
-  <br>
-  <mat-divider></mat-divider>
-  <br>
+<br>
+<mat-divider></mat-divider>
+<br>
 
-  <div fxFlexFill
-       fxLayout="row wrap"
-       display="flex"
-       fxLayout.xs="column"
-       fxLayoutGap="15px grid"
-       fxLayoutAlign="center">
-    <gh-plant-card *ngFor="let filteredPlant of filteredPlants; index as i"
-                   fxFlex="20%"
-                   fxFlex.md="30%"
-                   fxFlex.lt-md="50%"
-                   fxFlex.xs="100%"
-                   [plant]="filteredPlant"
-                   [primaryTags]="primaryTags"
-                   (detailsClicked)="onDetailsClicked($event)"
-                   (favoriteClicked)="onFavoriteClicked($event)">
-    </gh-plant-card>
-  </div>
+<div fxLayout="row wrap"
+     display="flex"
+     fxLayout.xs="column"
+     fxLayoutGap="15px grid"
+     fxLayoutAlign="center">
+  <gh-plant-card *ngFor="let filteredPlant of filteredPlants; index as i"
+                 fxFlex="20%"
+                 fxFlex.md="30%"
+                 fxFlex.lt-md="50%"
+                 fxFlex.xs="100%"
+                 [plant]="filteredPlant"
+                 [primaryTags]="primaryTags"
+                 (detailsClicked)="onDetailsClicked($event)"
+                 (favoriteClicked)="onFavoriteClicked($event)">
+  </gh-plant-card>
 </div>
