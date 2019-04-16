@@ -1,37 +1,39 @@
-<mat-card>
-  <mat-card-title>
-    <span fxFlex="100%">{{plant.commonName}}</span>
-    <mat-icon (click)="clickFavorite()"
-              style="cursor:pointer"
-              [color]="plant.favorite? 'accent' : ''">favorite</mat-icon>
-    <mat-icon (click)="clickDetails()"
-              style="cursor:pointer">remove_red_eye</mat-icon>
-  </mat-card-title>
-  <img mat-card-image
-       [src]="plant.imgSource">
-  <mat-card-content>
-    <div class="module gh-fade">
-      <p gh-caption>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem animi amet recusandae itaque,
-        reprehenderit
-        ipsum
-        illum eaque sint dolorum sequi. Tenetur incidunt similique minima deleniti maiores repudiandae beatae
-        aspernatur
-        provident.</p>
-    </div>
-  </mat-card-content>
-  <mat-card-footer>
-    <mat-chip-list>
-      <div class="centered-chips"
-           display="flex"
-           fxLayoutAlign="center">
-        <mat-chip *ngFor="let tag of primaryTags"
-                  class="card-chip"
-                  fxGrow="1"
-                  [selected]="isPrimaryTagSelected(tag.id)"
-                  [selectable]="false">
-          <span class="text-truncate">{{tag.value}}</span>
-        </mat-chip>
+<div class="card-shadow">
+  <mat-card>
+    <mat-card-title>
+      <span fxFlex="100%">{{plant.commonName}}</span>
+      <mat-icon (click)="clickFavorite()"
+                style="cursor:pointer"
+                [color]="plant.favorite? 'accent' : ''">favorite</mat-icon>
+      <mat-icon (click)="clickDetails()"
+                style="cursor:pointer">remove_red_eye</mat-icon>
+    </mat-card-title>
+    <img mat-card-image
+         [src]="plant.imgSource">
+    <mat-card-content>
+      <div class="gh-fade">
+        <p gh-caption>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem animi amet recusandae itaque,
+          reprehenderit
+          ipsum
+          illum eaque sint dolorum sequi. Tenetur incidunt similique minima deleniti maiores repudiandae beatae
+          aspernatur
+          provident.</p>
       </div>
-    </mat-chip-list>
-  </mat-card-footer>
-</mat-card>
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-chip-list>
+        <div class="card-chips-container"
+             display="flex"
+             fxLayoutAlign="center">
+          <mat-chip *ngFor="let tag of primaryTags"
+                    class="card-chip"
+                    fxGrow="-0.5"
+                    [selected]="isPrimaryTagSelected(tag.id)"
+                    [selectable]="false">
+            <span class="text-truncate">{{tag.value}}</span>
+          </mat-chip>
+        </div>
+      </mat-chip-list>
+    </mat-card-footer>
+  </mat-card>
+</div>
