@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {FormControl} from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -9,11 +9,12 @@ import {FormControl} from '@angular/forms';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  values: string[];
+  values: number[];
   mode = new FormControl('over');
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.values = [1, 2, 3, 4, 5, 6]
   }
 
 

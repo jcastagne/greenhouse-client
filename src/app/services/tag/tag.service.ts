@@ -25,7 +25,7 @@ export class TagService {
     },
     {
       id: 6,
-      value: 'Permanent',
+      value: 'Permanent looong value',
       primary: true
     },
     {
